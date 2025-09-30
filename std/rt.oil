@@ -12,7 +12,7 @@ pub extern fn exit(code: int): dyn = `
   }
 `
 pub extern fn panic(text: string): dyn = `
-  const msg = "\x1b[31mpanic:\x1b[0m " + msg;
+  const msg = "\x1b[31mpanic:\x1b[0m " + text;
   const err = new Error(msg);
   throw err;
 `
