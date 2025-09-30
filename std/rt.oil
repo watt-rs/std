@@ -11,6 +11,6 @@ pub extern fn exit(code: int): dyn = `
     return "unimplemented";
   }
 `
-pub fn panic(text: string) {
+pub fn panic(text: string): dyn {
   return "unimplemented"
 }
