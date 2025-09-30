@@ -2,8 +2,20 @@ use std/rt as rt
 
 pub extern fn println(text: dyn): dyn = "console.log(text)"
 pub extern fn readln(): dyn = `
-  if (rt.which() == "Deno") {
-    return prompt("")
+  let runtime = rt.which();
+  if (runtime == "Deno" ||
+      runtime == "Bun") {
+    return prompt("");
+  }
+  else {
+    return "unimplemented";
+  }
+`
+pub extern fn prompt(text: dyn): dyn = `
+  let runtime = rt.which();
+  if (runtime == "Deno" ||
+      runtime == "Bun") {
+    return prompt(text);
   }
   else {
     return "unimplemented";
