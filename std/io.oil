@@ -1,6 +1,6 @@
 use std/rt as rt
 
-pub extern fn println(text: dyn): dyn = "console.log(text)"
+pub extern fn println(text: dyn) = "console.log(text)"
 pub extern fn readln(): dyn = `
   let runtime = rt.which();
   if (runtime == "Deno" ||
