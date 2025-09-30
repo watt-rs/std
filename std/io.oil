@@ -3,9 +3,9 @@ use std/rt as rt
 pub extern fn println(text: dyn): dyn = "console.log(text)"
 pub extern fn input(): dyn = `
   if (rt.which() == "Deno") {
-    return prompt()
+    return new TextDecoder().decode(Deno.readAllSync(Deno.stdin)).trim();
   }
   else {
-    return "unimplemented"
+    return "unimplemented";
   }
 `
