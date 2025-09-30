@@ -1,6 +1,6 @@
 pub extern fn which(): string = "return (typeof Deno!=\"undefined\"?\"Deno\":typeof Bun!=\"undefined\"?\"Bun\":typeof process!=\"undefined\"&&process.versions?.node?\"Node.js\":\"Unknown\")"
 pub extern fn exit(code: int): dyn = `
-  let runtime = which();
+  const runtime = which();
   if (runtime == "Deno") {
     Deno.exit(code);
   } else if (runtime == "Bun") {
@@ -11,6 +11,8 @@ pub extern fn exit(code: int): dyn = `
     return "unimplemented";
   }
 `
-pub fn panic(text: string): dyn {
-  return "unimplemented"
-}
+pub extern fn panic(text: string): dyn = `
+  const msg = "\x1b[31mpanic:\x1b[0m " + msg;
+  const err = new Error(msg);
+  throw err;
+`
