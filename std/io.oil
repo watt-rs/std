@@ -1,2 +1,11 @@
+use std/rt as rt
+
 pub extern fn println(text: dyn): dyn = "console.log(text)"
-pub extern fn input(): dyn = "return prompt()"
+pub extern fn input(): dyn = `
+  if (rt.which() == "Deno") {
+    return prompt()
+  }
+  else {
+    return "unimplemented"
+  }
+`
