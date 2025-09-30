@@ -5,7 +5,7 @@ pub extern fn exit(code: int): dyn = `
     Deno.exit(code);
   } else if (runtime == "Bun") {
     Bun.exit(code);
-  } else if (runtime == "Node.js" {
+  } else if (runtime == "Node.js") {
     process.exit(code);
   } else {
     return "unimplemented";
