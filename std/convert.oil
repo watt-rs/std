@@ -1,1 +1,2 @@
-pub extern fn number(val: dyn): dyn = "Number(val)"
+pub extern fn int(val: dyn): int = "parseInt(val)"
+pub extern fn float(val: dyn): float = "parseFloat(val)"
