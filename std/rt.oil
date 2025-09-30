@@ -1,1 +1,1 @@
-pub extern fn which(): string = "(typeof Deno!=\"undefined\"?\"Deno\":typeof Bun!=\"undefined\"?\"Bun\":typeof process!=\"undefined\"&&process.versions?.node?\"Node.js\":\"Unknown\";)"
+pub extern fn which(): string = "(typeof Deno!=\"undefined\"?\"Deno\":typeof Bun!=\"undefined\"?\"Bun\":typeof process!=\"undefined\"&&process.versions?.node?\"Node.js\":\"Unknown\")"
