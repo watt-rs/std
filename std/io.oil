@@ -11,7 +11,7 @@ pub extern fn readln(): dyn = `
     return "unimplemented";
   }
 `
-pub extern fn prompt(text: dyn): dyn = `
+pub extern fn ask(text: dyn): dyn = `
   let runtime = rt.which();
   if (runtime == "Deno" ||
       runtime == "Bun") {
