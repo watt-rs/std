@@ -9,7 +9,7 @@ pub extern fn readln(): dyn = `
     return prompt("");
   }
   else {
-    panic("`readln` is not implemented for " + runtime + " runtime");
+    panic("\`readln\` is not implemented for " + runtime + " runtime");
   }
 `
 pub extern fn ask(text: dyn): dyn = `
@@ -19,6 +19,6 @@ pub extern fn ask(text: dyn): dyn = `
     return prompt(text);
   }
   else {
-    panic("`ask` is not implemented for " + runtime + " runtime");
+    panic("\`ask\` is not implemented for " + runtime + " runtime");
   }
 `
