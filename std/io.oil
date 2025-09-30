@@ -1,5 +1,5 @@
 use std/rt as rt
-use std/rt for { panic }
+use std/rt for panic
 
 pub extern fn println(text: dyn) = "console.log(text)"
 pub extern fn readln(): dyn = `
