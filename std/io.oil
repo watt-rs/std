@@ -1,0 +1,2 @@
+pub extern fn println(text: dyn): dyn = "console.log(text)"
+pub extern fn input(): dyn = "prompt()"
