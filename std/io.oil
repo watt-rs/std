@@ -1,2 +1,2 @@
 pub extern fn println(text: dyn): dyn = "console.log(text)"
-pub extern fn input(): dyn = "prompt()"
+pub extern fn input(): dyn = "return prompt()"
