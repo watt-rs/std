@@ -1,2 +1,2 @@
-pub extern fn int(val: dyn): int = "return parseInt(val)"
-pub extern fn float(val: dyn): float = "return parseFloat(val)"
+pub extern fn int(val: string): int = "return parseInt(val)"
+pub extern fn float(val: string): float = "return parseFloat(val)"
