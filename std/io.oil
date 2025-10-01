@@ -2,7 +2,7 @@ use std/rt as rt
 use std/rt for panic
 
 pub extern fn println(text: dyn) = "console.log(text)"
-pub extern fn readln(): dyn = `
+pub extern fn readln(): string = `
   let runtime = rt.which();
   if (runtime == "Deno" ||
       runtime == "Bun") {
@@ -12,7 +12,7 @@ pub extern fn readln(): dyn = `
     panic("\`readln\` is not implemented for " + runtime + " runtime");
   }
 `
-pub extern fn ask(text: dyn): dyn = `
+pub extern fn ask(text: dyn): string = `
   let runtime = rt.which();
   if (runtime == "Deno" ||
       runtime == "Bun") {
