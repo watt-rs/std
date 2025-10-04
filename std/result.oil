@@ -13,7 +13,7 @@ pub fn unwrap(result: Result): dyn {
     }
     Result.Err { } -> {
       rt.panic("unwrap on error result.")
-      return unreachable
+      return unreachable()
     }
   }
 }
