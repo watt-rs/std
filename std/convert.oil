@@ -1,3 +1,24 @@
-pub extern fn int(val: string): int = "return parseInt(val)"
-pub extern fn float(val: string): float = "return parseFloat(val)"
+use std/result for Result
+
+pub enum ConvertError {
+  FailedToParseInt(val: string),
+  FailedToParseFloat(val: string)
+}
+
+pub extern fn int(val: string): Result = `
+  let int = parseInt(val);
+  if (int == NaN) {
+    return Result.Err(ConvertError.FailedToParseInt(val));
+  }
+  return Result.Ok(int);
+`
+
+pub extern fn float(val: string): Result = `
+  let float = parseFloat(val);
+  if (float == NaN) {
+    return Result.Err(ConvertError.FailedToParseInt(val));
+  }
+  return Result.Ok(float);
+`
+
 pub extern fn string(val: dyn): string = "return val.toString()"
