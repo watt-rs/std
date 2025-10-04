@@ -1,4 +1,17 @@
+use std/rt as rt
+
 pub enum Result {
   Ok(value: dyn),
   Err(error: dyn)
+}
+
+pub fn unwrap(result: Result): dyn {
+  match result {
+    Result.Ok { value } -> {
+      return value
+    }
+    Result.Err { } -> {
+      rt.panic("unwrap on error result.")
+    }
+  }
 }
