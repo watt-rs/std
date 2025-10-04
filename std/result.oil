@@ -1,4 +1,5 @@
 use std/rt as rt
+use std/unreachable for unreachable
 
 pub enum Result {
   Ok(value: dyn),
@@ -12,6 +13,7 @@ pub fn unwrap(result: Result): dyn {
     }
     Result.Err { } -> {
       rt.panic("unwrap on error result.")
+      return unreachable
     }
   }
 }
