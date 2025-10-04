@@ -1,4 +1,4 @@
 [pkg]
-pkg = "app"
+pkg = "lib"
 name = "test"
 dependencies = []
