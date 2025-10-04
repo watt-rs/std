@@ -1,0 +1,6 @@
+use std/rt for panic
+
+pub fn unreachable(): dyn {
+    rt.panic("unreachable created.")
+    return -1
+}
