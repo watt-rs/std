@@ -3,7 +3,7 @@ pkg = "lib"
 name = "test"
 dependencies = []
 
-[lint]
+[lints]
 disallow = [
     "analyze::warn::access_of_dyn_field",
     "analyze::warn::call_of_dyn"
