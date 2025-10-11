@@ -4,7 +4,7 @@ name = "test"
 dependencies = []
 
 [lints]
-disallow = [
+disabled = [
     "analyze::warn::access_of_dyn_field",
     "analyze::warn::call_of_dyn"
 ]
