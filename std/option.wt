@@ -1,4 +1,4 @@
-enum Option {
+pub enum Option {
   Some(element: dyn),
   None
 }
