@@ -9,11 +9,12 @@ pub enum Result {
 pub fn unwrap(result: Result): dyn {
   match result {
     Result.Ok { value } -> {
-      return value
+       value
     }
     Result.Err { } -> {
       panic("unwrap on error result.")
-      return unreachable()
+      unreachable()
     }
+    _ -> unreachable()
   }
 }
