@@ -1,6 +1,6 @@
 use std/rt for panic
 
 pub fn unreachable(): dyn {
-    panic("unreachable created.")
+    panic("unreachable created.");
     -1
 }
