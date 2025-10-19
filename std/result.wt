@@ -8,10 +8,10 @@ pub enum Result {
 
 pub fn unwrap(result: Result): dyn {
   match result {
-    Result.Ok { value } -> {
+    :Result.Ok { value } -> {
        value
     }
-    Result.Err { } -> {
+    :Result.Err -> {
        panic("unwrap on error result.");
        unreachable()
     }
