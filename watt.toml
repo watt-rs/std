@@ -7,4 +7,5 @@ dependencies = []
 disabled = [
     "typeck::warn::access_of_dyn_field",
     "typeck::warn::call_of_dyn",
+    "typeck::warn::unit_and_dyn_unification"
 ]
