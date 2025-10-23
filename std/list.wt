@@ -1,0 +1,69 @@
+/// Imports
+use std/io as io
+use std/convert as conv
+use std/option for Option
+
+/// Externs
+extern fn list_new(): dyn = "return [];"
+extern fn list_get(list: dyn, idx: int): Option = `
+  if (idx < list.length) {
+    return Option.Some(list[idx]);
+  } else {
+    return Option.None();
+  }
+`
+extern fn list_copy(list: dyn): bool = "return list.slice();"
+
+/// Simple list wrapper
+pub type List {
+  /// Raw list
+  let list = new_list()
+
+  /// Pushes element to list
+  pub fn push(val: dyn) =
+    self.list.push(val)
+
+  /// Deletes element
+  pub fn delete(index: int) =
+    if index > 0 && index < list.length {
+      self.list.splice(index, 1);
+    }
+
+  /// Gets length of list
+  pub fn len(): int =
+    self.list.length
+
+  /// Unshifts element to list
+  pub fn unshift(val: dyn) =
+    self.list.unshift(val)
+
+  /// Gets index of element
+  pub fn index_of(val: dyn) =
+    self.list.indexOf(val)
+
+  /// Pops element from list
+  pub fn pop(): dyn =
+    self.list.pop()
+
+  /// Shifts element from list
+  pub fn unshift(): dyn =
+    self.list.shift()
+
+  /// Checks element existence in list
+  pub fn contains(value: dyn): bool =
+    self.list.contains(value)
+
+  /// Gets element by index
+  pub fn get(index: int): Option =
+    if index > 0 && index < self.list.length =
+      Option.Some(list_get(self.list, index)
+    else =
+      Option.None()
+
+  /// Copies the list
+  pub fn copy(): List {
+    let list = List()
+    list.list = self.list.slice()
+    list
+  }
+}
