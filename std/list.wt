@@ -60,7 +60,11 @@ pub type List {
     list
   }
 
+  /// Converts into string by join
+  pub fn join(by: string): string =
+    self.list.join(by)
+
   /// Converts into string
   pub fn to_string(): string =
-    "[" <> self.list.join(", ") <> "]"
+    "[" <> self.join(", ") <> "]"
 }
