@@ -18,7 +18,7 @@ pub type List {
 
   /// Deletes element
   pub fn delete(index: int) =
-    if index > 0 && index < list.length {
+    if index > 0 && index < self.list.length {
       self.list.splice(index, 1);
     }
 
