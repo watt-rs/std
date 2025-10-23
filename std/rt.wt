@@ -15,3 +15,4 @@ pub extern fn panic(text: string) = `
   const err = new Error(text);
   throw err;
 `
+pub extern fn unit() = `return;`
