@@ -5,14 +5,7 @@ use std/option for Option
 
 /// Externs
 extern fn list_new(): dyn = "return [];"
-extern fn list_get(list: dyn, idx: int): Option = `
-  if (idx < list.length) {
-    return Option.Some(list[idx]);
-  } else {
-    return Option.None();
-  }
-`
-extern fn list_copy(list: dyn): bool = "return list.slice();"
+extern fn list_get(list: dyn, idx: int): Option = "return list[idx]"
 
 /// Simple list wrapper
 pub type List {
