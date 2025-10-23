@@ -55,8 +55,8 @@ pub type List {
 
   /// Copies the list
   pub fn copy(): List {
-    let list = List()
-    list.list = self.list.slice()
+    let list = List();
+    list.list = self.list.slice();
     list
   }
 
