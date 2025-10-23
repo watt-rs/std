@@ -18,7 +18,7 @@ pub type List {
 
   /// Deletes element
   pub fn delete(index: int) =
-    if index > 0 && index < self.list.length {
+    if index > 0 && index < self.length() {
       self.list.splice(index, 1);
     }
 
@@ -48,7 +48,7 @@ pub type List {
 
   /// Gets element by index
   pub fn get(index: int): Option =
-    if index > 0 && index < self.list.length =
+    if index > 0 && index < self.length() =
       Option.Some(list_get(self.list, index))
     else =
       Option.None()
