@@ -16,15 +16,15 @@ pub type List {
   pub fn push(val: dyn) =
     self.list.push(val)
 
-  /// Deletes element
-  pub fn delete(index: int) =
-    if index > 0 && index < self.length() {
-      self.list.splice(index, 1);
-    }
-
   /// Gets length of list
   pub fn len(): int =
     self.list.length
+
+  /// Deletes element
+  pub fn delete(index: int) =
+    if index > 0 && index < self.len() {
+      self.list.splice(index, 1);
+    }
 
   /// Unshifts element to list
   pub fn unshift(val: dyn) =
@@ -48,7 +48,7 @@ pub type List {
 
   /// Gets element by index
   pub fn get(index: int): Option =
-    if index > 0 && index < self.length() =
+    if index > 0 && index < self.len() =
       Option.Some(list_get(self.list, index))
     else =
       Option.None()
