@@ -48,12 +48,10 @@ pub type List {
 
   /// Gets element by index
   pub fn get(index: int): Option =
-    if index > 0 && index < self.list.length {
-      Option.Some(list_get(self.list, index)
-    }
-    else {
+    if index > 0 && index < self.list.length =
+      Option.Some(list_get(self.list, index))
+    else =
       Option.None()
-    }
 
   /// Copies the list
   pub fn copy(): List {
