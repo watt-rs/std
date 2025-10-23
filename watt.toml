@@ -5,6 +5,6 @@ dependencies = []
 
 [lints]
 disabled = [
-    "analyze::warn::access_of_dyn_field",
-    "analyze::warn::call_of_dyn"
+    "typeck::warn::access_of_dyn_field",
+    "typeck::warn::call_of_dyn",
 ]
