@@ -39,7 +39,7 @@ pub type List {
     self.list.pop()
 
   /// Shifts element from list
-  pub fn unshift(): dyn =
+  pub fn shift(): dyn =
     self.list.shift()
 
   /// Checks element existence in list
