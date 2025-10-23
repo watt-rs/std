@@ -59,4 +59,8 @@ pub type List {
     list.list = self.list.slice()
     list
   }
+
+  /// Converts into string
+  pub fn to_string(): string =
+    "[" <> self.list.join(", ") <> "]"
 }
