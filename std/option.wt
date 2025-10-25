@@ -1,3 +1,6 @@
+/// Imports
+use std/rt for panic
+
 /// Represents `Option` type
 pub enum Option {
   Some(value: dyn),

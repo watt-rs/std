@@ -1,6 +1,5 @@
 /// Imports
 use std/rt for panic
-use std/unreachable for unreachable
 
 /// Represents `Result` type
 pub enum Result {
