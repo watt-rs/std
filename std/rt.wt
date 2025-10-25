@@ -1,6 +1,5 @@
 /// Returns information about current runtime
-pub extern fn which(): string = `
-    return (typeof Deno!=\"undefined\"?\"Deno\":typeof Bun!=\"undefined\"?\"Bun\":typeof process!=\"undefined\"&&process.versions?.node?\"Node.js\":\"Unknown\")"
+pub extern fn which(): string = "return (typeof Deno!=\"undefined\"?\"Deno\":typeof Bun!=\"undefined\"?\"Bun\":typeof process!=\"undefined\"&&process.versions?.node?\"Node.js\":\"Unknown\")"
 
 /// Kills process with exit code
 pub extern fn exit(code: int) = `
