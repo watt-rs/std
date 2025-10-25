@@ -23,14 +23,14 @@ pub extern fn panic(text: string) = `
 `
 
 /// Returns `()` type
-pub extern fn unit() = `return;`
+pub extern fn unit() = "return;"
 
 /// Returns runtime meta information about object
 pub extern fn meta_of(value: dyn): string = `
     if ($meta in value) {
         return value.$meta;
     } else {
-        return "Js"
+        return "Js";
     }
 `
 
