@@ -1,10 +1,13 @@
+/// Imports
 use std/result for Result
 
+/// Represents convertation error
 pub enum ConvertError {
   FailedToParseInt(val: string),
   FailedToParseFloat(val: string)
 }
 
+/// Converts string value to `Result(int)`
 pub extern fn int(val: string): Result = `
   let int = parseInt(val);
   if (int == NaN) {
@@ -13,6 +16,7 @@ pub extern fn int(val: string): Result = `
   return Result.Ok(int);
 `
 
+/// Converts string value to `Result(float)`
 pub extern fn float(val: string): Result = `
   let float = parseFloat(val);
   if (float == NaN) {
@@ -21,4 +25,5 @@ pub extern fn float(val: string): Result = `
   return Result.Ok(float);
 `
 
+/// Converts any value to string
 pub extern fn string(val: dyn): string = "return val.toString()"

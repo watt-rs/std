@@ -1,4 +1,7 @@
+/// Import
 use std/rt for panic
 
+/// Call of `unreachable` produces panic.
+/// Used to mark branch of code as unreachable
 pub fn unreachable() =
     panic("unreachable created.")

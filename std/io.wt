@@ -1,7 +1,12 @@
+/// Imports
 use std/rt as rt
 use std/rt for panic
 
+/// Prints `text` and `\n` to `stdout`
 pub extern fn println(text: dyn) = "console.log(text)"
+
+/// Reads line from `stdin`
+/// Available runtimes: Deno, Bun
 pub extern fn readln(): string = `
   let runtime = rt.which();
   if (runtime == "Deno" ||
@@ -12,6 +17,9 @@ pub extern fn readln(): string = `
     panic("\`readln\` is not implemented for " + runtime + " runtime");
   }
 `
+
+/// Reads line from `stdin` with prompt printed to `stdout`
+/// Available for runtimes: Deno, Bun
 pub extern fn ask(text: dyn): string = `
   let runtime = rt.which();
   if (runtime == "Deno" ||

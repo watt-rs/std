@@ -1,19 +1,33 @@
+/// Imports
 use std/rt for panic
 use std/unreachable for unreachable
 
+/// Represents `Result` type
 pub enum Result {
   Ok(value: dyn),
   Err(error: dyn)
 }
 
+/// Represents unwrap function of result
 pub fn unwrap(result: Result): dyn {
   match result {
-    Result.Ok { value } -> {
-       value
-    }
-    Result.Err -> {
-       panic("unwrap on error result.");
-       unreachable()
-    }
+    Result.Ok { value } -> value
+    Result.Err -> panic("unwrap on error result.")
   }
+}
+
+/// Checks `Result` is `Ok`
+pub fn is_ok(result: Result): bool {
+    match result {
+        Result.Ok -> true
+        Result.Err -> false
+    }
+}
+
+/// Checks `Result` is `Err`
+pub fn is_err(result: Result): bool {
+    match result {
+        Result.Ok -> false
+        Result.Err -> true
+    }
 }

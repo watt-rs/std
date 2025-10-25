@@ -1,3 +1,4 @@
+/// Represents `Option` type
 pub enum Option {
   Some(element: dyn),
   None

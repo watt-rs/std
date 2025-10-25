@@ -1,4 +1,8 @@
-pub extern fn which(): string = "return (typeof Deno!=\"undefined\"?\"Deno\":typeof Bun!=\"undefined\"?\"Bun\":typeof process!=\"undefined\"&&process.versions?.node?\"Node.js\":\"Unknown\")"
+/// Returns information about current runtime
+pub extern fn which(): string = `
+    return (typeof Deno!=\"undefined\"?\"Deno\":typeof Bun!=\"undefined\"?\"Bun\":typeof process!=\"undefined\"&&process.versions?.node?\"Node.js\":\"Unknown\")"
+
+/// Kills process with exit code
 pub extern fn exit(code: int) = `
   const runtime = which();
   if (runtime == "Deno") {
@@ -11,8 +15,48 @@ pub extern fn exit(code: int) = `
     panic("unimplemented");
   }
 `
+
+/// Prints panic message
 pub extern fn panic(text: string) = `
   const err = new Error(text);
   throw err;
 `
+
+/// Returns `()` type
 pub extern fn unit() = `return;`
+
+/// Returns runtime meta information about object
+pub extern fn meta_of(value: dyn): string = `
+    if ($meta in value) {
+        return value.$meta;
+    } else {
+        return "Js"
+    }
+`
+
+/// Returns runtime type information about object
+pub extern fn type_of(value: dyn): string = `
+    if ($type in value) {
+        return value.$type;
+    } else {
+        return typeof(value);
+    }
+`
+
+/// Returns runtime enum variant information about object
+pub extern fn variant_of(value: dyn): string = `
+    if ($enum in value) {
+        return value.$variant;
+    } else {
+        return "NotEnumVariant";
+    }
+`
+
+/// Returns runtime enum information about object
+pub extern fn enum_of(value: dyn): string = `
+    if ($enum in value) {
+        return value.$enum;
+    } else {
+        return "NotEnum";
+    }
+`
