@@ -1,5 +1,29 @@
 /// Represents `Option` type
 pub enum Option {
-  Some(element: dyn),
+  Some(value: dyn),
   None
+}
+
+/// Represents unwrap function of option
+pub fn unwrap(option: Option): dyn {
+  match option {
+    Option.Some { value } -> value
+    Option.None -> panic("unwrap on `Option.None`")
+  }
+}
+
+/// Checks `Option` is `Some`
+pub fn is_some(option: Option): bool {
+    match option {
+        Option.Some -> true
+        Option.None -> false
+    }
+}
+
+/// Checks `Result` is `Err`
+pub fn is_none(option: Option): bool {
+    match option {
+        Option.Some -> false
+        Option.None -> true
+    }
 }
