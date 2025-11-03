@@ -10,7 +10,7 @@ pub enum Result {
 /// Represents unwrap function of result
 pub fn unwrap(result: Result): dyn {
   match result {
-    Result.Ok { value } -> value
+    Result.Ok(value) -> value
     Result.Err -> panic("unwrap on `Result.Err`")
   }
 }
