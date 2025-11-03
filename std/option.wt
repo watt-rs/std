@@ -10,7 +10,7 @@ pub enum Option {
 /// Represents unwrap function of option
 pub fn unwrap(option: Option): dyn {
   match option {
-    Option.Some { value } -> value
+    Option.Some(value) -> value
     Option.None -> panic("unwrap on `Option.None`")
   }
 }
