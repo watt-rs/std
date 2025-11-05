@@ -10,7 +10,7 @@ extern fn list_get(list: dyn, idx: int): Option = "return list[idx]"
 /// Simple list wrapper
 pub type List {
   /// Raw list
-  let list = list_new()
+  list: dyn = list_new()
 
   /// Pushes element to list
   pub fn push(val: dyn) =
