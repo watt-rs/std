@@ -2,13 +2,13 @@
 use std/rt for panic
 
 /// Represents `Option` type
-pub enum Option<T> {
-  Some(value: T),
+pub enum Option {
+  Some(value: dyn),
   None
 }
 
 /// Represents unwrap function of option
-pub fn unwrap<T>(option: Option<T>) {
+pub fn unwrap(option: dyn) {
   match option {
     Option.Some(value) -> value
     Option.None -> panic("unwrap on `Option.None`")
@@ -16,7 +16,7 @@ pub fn unwrap<T>(option: Option<T>) {
 }
 
 /// Checks `Option` is `Some`
-pub fn is_some<T>(option: Option<T>): bool {
+pub fn is_some(option: dyn): bool {
     match option {
         Option.Some -> true
         Option.None -> false
@@ -24,7 +24,7 @@ pub fn is_some<T>(option: Option<T>): bool {
 }
 
 /// Checks `Result` is `Err`
-pub fn is_none<T>(option: Option<T>): bool {
+pub fn is_none(option: dyn): bool {
     match option {
         Option.Some -> false
         Option.None -> true
