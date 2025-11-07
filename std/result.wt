@@ -2,13 +2,13 @@
 use std/rt for panic
 
 /// Represents `Result` type
-pub enum Result {
-  Ok(value: dyn),
-  Err(error: dyn)
+pub enum Result<O, E> {
+  Ok(value: O),
+  Err(error: E)
 }
 
 /// Represents unwrap function of result
-pub fn unwrap(result: Result): dyn {
+pub fn unwrap<O, E>(result: Result<O, E>): dyn {
   match result {
     Result.Ok(value) -> value
     Result.Err -> panic("unwrap on `Result.Err`")
@@ -16,7 +16,7 @@ pub fn unwrap(result: Result): dyn {
 }
 
 /// Checks `Result` is `Ok`
-pub fn is_ok(result: Result): bool {
+pub fn is_ok<O, E>(result: Result<O, E>): bool {
     match result {
         Result.Ok -> true
         Result.Err -> false
@@ -24,7 +24,7 @@ pub fn is_ok(result: Result): bool {
 }
 
 /// Checks `Result` is `Err`
-pub fn is_err(result: Result): bool {
+pub fn is_err<O, E>(result: Result<O, E>): bool {
     match result {
         Result.Ok -> false
         Result.Err -> true
